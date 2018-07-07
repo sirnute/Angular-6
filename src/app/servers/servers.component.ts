@@ -11,7 +11,6 @@ export class ServersComponent implements OnInit
   serverCreationStatus = 'No server was created!';
   serverName ='';
   userName = '';
-  allowReset = false;
 
   constructor() 
   {
@@ -34,26 +33,4 @@ export class ServersComponent implements OnInit
   {
     this.serverName = (<HTMLInputElement>event.target).value;
   }
-
-  toggleResetClick(event: Event)
-  {
-    if((<HTMLInputElement>event.target).value!='')
-    {
-      this.allowReset = true;
-    }
-    else
-    {
-      this.allowReset = false;
-    }
-    
-  }
-
-  onResetClick()
-  {
-    this.userName = '';
-    this.allowReset = false;
-  }
-
-
-
 }
