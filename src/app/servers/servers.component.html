@@ -1,0 +1,49 @@
+<label>User Name</label>
+<input 
+    type="text"
+    class ="form-control"
+    [(ngModel)]="userName"
+    (input)=toggleResetClick($event)>
+<p>{{ userName }}</p>
+
+<button 
+    class="btn btn-primary" 
+    [disabled]="!allowReset"
+    (click)=" onResetClick() "
+    >Reset
+</button>
+
+<br><br>
+
+
+
+
+
+<label>Server Name</label>
+<!-- <input
+    type="text" 
+    class="form-control"
+    (input)="onUpdateServerName($event)"> -->
+
+
+
+<input 
+    type="text"
+    class ="form-control"
+    [(ngModel)]="serverName">
+
+<p>{{ serverName }}</p>
+
+<button 
+    class="btn btn-primary" 
+    [disabled]="!allowNewServer" 
+    (click)="onCreateServer()">
+    Add Server
+</button>
+
+<br>
+<br>
+<p>{{ serverCreationStatus }}</p>
+
+<app-server></app-server>
+<app-server></app-server>
